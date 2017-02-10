@@ -28,3 +28,4 @@ class Solution(object):
         #     else:
         #         even = max(even+nums[i], odd)
         # return max(odd, even)
+        
