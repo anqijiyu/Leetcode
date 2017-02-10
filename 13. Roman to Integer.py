@@ -25,3 +25,14 @@ class Solution(object):
                 ans += d[s[i]]
             i += 1
         return ans
+    
+        #如果前一个大于等于后一个，就加上，否则就减去
+        ans=0
+        dic={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        for i in range(len(s)-1):
+            if dic[s[i]]>=dic[s[i+1]]:
+                ans+=dic[s[i]]
+            else:
+                ans-=dic[s[i]]
+        ans+=dic[s[len(s)-1]]
+        return ans
