@@ -13,3 +13,4 @@ class Solution(object):
             while num % i == 0:
                 num /= i
         return num == 1
+    
