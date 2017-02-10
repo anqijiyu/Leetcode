@@ -16,3 +16,4 @@ class Solution(object):
             minprices = min(minprices, prices[i])
             maxprofit = max(maxprofit, prices[i]-minprices)
         return maxprofit
+    
