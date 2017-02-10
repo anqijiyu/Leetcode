@@ -11,3 +11,7 @@ class Solution(object):
                 nums[l] = nums[i]
                 l += 1
         return l
+    #哪错了？？？？？？
+    #k=nums.count(val)
+        #ans=len(nums)-k
+        #return ans
