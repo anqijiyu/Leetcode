@@ -35,3 +35,4 @@ class Solution(object):
             if str[:i] * (len(str) / i) == str:
                 return True
         return False
+    
