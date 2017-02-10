@@ -11,6 +11,7 @@ class Solution(object):
         :rtype: ListNode
         """
         # 遍历所有节点，对于每个节点，检查其后的一个节点是否与当前节点值相同，若相同则删除后面的节点。循环下去。
+        #自己想到的是这种方法，但是忽略了如果三个相同的情况，少了一个else
         p = head
         while p:
             if p.next and p.val == p.next.val:
