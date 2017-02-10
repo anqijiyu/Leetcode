@@ -30,3 +30,4 @@ class Solution(object):
             root = [root.left, root.right][p.val > root.val]
             # 如果p.val > root.val， root = root.right, 判断二叉树是往左子节点还是右子节点走
         return root
+    
