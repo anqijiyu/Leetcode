@@ -12,3 +12,5 @@ class Solution(object):
             for i in d:
                 ans += d[i] * (d[i] - 1)
         return ans
+    
+    
