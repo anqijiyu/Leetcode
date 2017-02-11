@@ -1,0 +1,22 @@
+class Solution(object):
+    def countAndSay(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        s='1'
+        for i in range(1,n):
+            tmp,count=s[0],1
+            res=[]
+            ls=len(s)
+            for j in range(1,ls):
+                if s[j]==tmp:
+                    count+=1
+                else:
+                    res.append(str(count))
+                    res.append(tmp)
+                    count,tmp=1,s[j]
+            res.append(str(count))
+            res.append(tmp)
+            s=''.join(res)
+        return s
