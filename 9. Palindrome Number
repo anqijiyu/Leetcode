@@ -1,0 +1,16 @@
+class Solution(object):
+    def isPalindrome(self, x):
+        """
+        :type x: int
+        :rtype: bool
+        """
+        #将原数反转，再比较，从末位开始乘10
+        if x<0:
+            return False
+        tmp=x
+        sum=0
+        while tmp:
+            k=tmp%10
+            sum=10*sum+k
+            tmp/=10
+        return sum==x
