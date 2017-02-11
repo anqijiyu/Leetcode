@@ -1,0 +1,8 @@
+class Solution:
+    # @param n, an integer
+    # @return an integer
+    def reverseBits(self, n):
+        tmp='{:0>32b}'.format(n)
+        tmp=tmp[::-1]
+        return int(tmp,2)
+        
