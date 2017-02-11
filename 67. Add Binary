@@ -1,0 +1,11 @@
+class Solution(object):
+    def addBinary(self, a, b):
+        """
+        :type a: str
+        :type b: str
+        :rtype: str
+        """
+        #使用内置函数，先转化为十进制，因为之后转化为二进制时为"0bxxx"，所以去掉前两位
+        a,b=int(a,2),int(b,2)
+        sum=a+b
+        return bin(sum)[2:]
