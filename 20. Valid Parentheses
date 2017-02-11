@@ -1,0 +1,17 @@
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        stack=[]
+        dic={'}':'{',')':'(',']':'['}
+        for i in s:
+            if i in dic.values():
+                stack.append(s)
+            elif i in dic.keys():
+                if not stack or dic[s]!=stack.pop():
+                    return False
+            else:
+                return False
+        return stack==[]
