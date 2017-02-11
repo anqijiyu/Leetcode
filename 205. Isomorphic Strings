@@ -1,0 +1,33 @@
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        
+        first = [-1]*256
+        second = [-1]*256
+        length = len(s)
+        
+        for i in range(len(s)):
+            if first[ord(s[i])] != second[ord(t[i])]:
+                return False
+            first[ord(s[i])] = i 
+            second[ord(t[i])] = i
+        return True
+        
+        
+class Solution(object):
+    def isIsomorphic(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
+        pattern_dict = {}
+        s_len = len(s)
+        for i in range(s_len):
+            if s[i] not in pattern_dict:
+                if t[i] in pattern_dict.values():
+                    return False
+                pattern_dict[s[i]] = t[i]
+            elif pattern_dict[s[i]] != t[i]:
+                return False
+        return True
