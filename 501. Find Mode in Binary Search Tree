@@ -1,0 +1,30 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, x):
+#         self.val = x
+#         self.left = None
+#         self.right = None
+
+class Solution(object):
+    def findMode(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[int]
+        """
+        if root is None:
+            return []
+        count=collections.Counter()
+        ans=[]
+        def bst(node):
+            if node:
+                count[node.val]+=1
+                bst(node.left)
+                bst(node.right)
+
+        
+        bst(root)
+        maxvalue=max(count.values())
+        for i in count:
+            if count[i]==maxvalue:
+                ans.append(i)
+        return ans
