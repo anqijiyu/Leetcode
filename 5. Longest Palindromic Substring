@@ -1,0 +1,20 @@
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        res=""
+        def findmax(s,r,l):
+            while r>=0 and l<len(s) and s[r]==s[l]:
+                r-=1
+                l+=1
+            return s[r+1:l]
+        for i in range(len(s)):
+            tmp=findmax(s,i,i)
+            if len(tmp)>len(res):
+                res=tmp
+            tmp=findmax(s,i,i+1)
+            if len(tmp)>len(res):
+                res=tmp
+        return res
