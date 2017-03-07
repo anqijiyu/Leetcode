@@ -1,0 +1,24 @@
+class Solution(object):
+    def letterCombinations(self, digits):
+        """
+        :type digits: str
+        :rtype: List[str]
+        """
+        pad={'2':'abc','3':'def','4':'ghi','5':'jkl','6':'mno','7':'pqrs','8':'tuv','9':'wxyz'}
+        if len(digits)==0:
+            return []
+        if len(digits)==1:
+            return list(pad[digits])
+            
+        d0=digits[:-1]
+        c=self.letterCombinations(d0)
+        
+        d1=digits[-1]
+        string1=pad[d1]
+        
+        res=[]
+        for i in string1:
+            for j in c:
+                tmp=j+i
+                res.append(tmp)
+        return res
